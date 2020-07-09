@@ -5306,7 +5306,7 @@ public class DefaultCodegen implements CodegenConfig {
         if (var.defaultValue != null) {
             String enumName = null;
             final String enumDefaultValue;
-            if ("string".equalsIgnoreCase(dataType)) {
+            if (isDataTypeString(dataType)) {
                 enumDefaultValue = toEnumValue(var.defaultValue, dataType);
             } else {
                 enumDefaultValue = var.defaultValue;
@@ -6124,7 +6124,7 @@ public class DefaultCodegen implements CodegenConfig {
      * @return true if it's a enum string
      */
     public boolean isDataTypeString(String dataType) {
-        return "String".equals(dataType);
+        return "string".equalsIgnoreCase(dataType);
     }
 
     @Override
